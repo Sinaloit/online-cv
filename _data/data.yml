@@ -104,7 +104,7 @@ experiences:
       Maintain, Install and Configure Server Infrastructure to operate various
       Casino systems. Including both internally facing Active Directory,
       system level changes, and customer facing systems such as IGT.
-        - Maintained 300+ Serers and 90 MSSQL Servers in a VMWare Environment
+        - Maintained 300+ Servers and 90 MSSQL Servers in a VMWare Environment
         - Installed and configued RSA SecureID Appliance
         - Migrated Active Directory to Role-Based permissions resolving security issues
   - role: Field Engineer
