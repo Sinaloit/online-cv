@@ -8,6 +8,7 @@ function print() {
 }
 
 function generatePDF() {
+  import { jsPDF } from "jspdf";
   var doc = new jsPDF();
   // Get the print layout URL
   const printURL = new URL("print", window.location.href).href;
@@ -27,7 +28,7 @@ function generatePDF() {
 
       // Configure pdf options
       const opt = {
-        callback: dock.save(),
+        callback: doc.save(),
         margin: 10,
         filename: filename,
         jsPDF: {
