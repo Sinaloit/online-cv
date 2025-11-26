@@ -8,7 +8,6 @@ function print() {
 }
 
 function generatePDF() {
-  var doc = new jsPDF();
   // Get the print layout URL
   const printURL = new URL("print", window.location.href).href;
 
@@ -27,9 +26,14 @@ function generatePDF() {
 
       // Configure pdf options
       const opt = {
-        callback: dock.save(),
         margin: 10,
         filename: filename,
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          letterRendering: true,
+        },
         jsPDF: {
           unit: "mm",
           format: "a4",
@@ -38,7 +42,11 @@ function generatePDF() {
       };
 
       // Generate PDF
-      doc.html(container, opt)
+      html2pdf()
+        .set(opt)
+        .from(container)
+        .save()
+        .catch((err) => console.error("Error generating PDF:", err));
     })
     .catch((err) => console.error("Error fetching print layout:", err));
 }
