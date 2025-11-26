@@ -8,7 +8,6 @@ function print() {
 }
 
 function generatePDF() {
-  import { jsPDF } from "jspdf";
   var doc = new jsPDF();
   // Get the print layout URL
   const printURL = new URL("print", window.location.href).href;
